@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Guess the Number</h1>
+    <p>{{ message }}</p>
+    <form action="{{ url_for('check_guess') }}" method="post">
+        <label for="guess">Can you guess the number?</label>
+        <input type="number" name="guess" id="guess" required>
+        <input type="hidden" name="target_number" value="{{ target_number }}">
+        <button type="submit">Submit Guess</button>
+    </form>
+{% endblock %}
